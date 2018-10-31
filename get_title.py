@@ -67,7 +67,7 @@ with open(file_name ,'r') as f:
 
 
 result = []
-with open('result.txt','a') as e:
+with open('result.txt','a',errors="ignore") as e:
     # scan_list = ['xss.cuijianxiong.top','mgate.baidu.com','trends.baidu.com']
     loop = asyncio.get_event_loop()
     tasks = [asyncio.ensure_future(scan(url)) for url in scan_list]
