@@ -51,7 +51,7 @@ with open('scan.xml') as f ,open(ipdata.replace('/24',''),'w') as e:
         log.error(e)
     for i in scan_dict:
         try:
-            command = 'nmap -sV -Pn -T4 --version-all {} -p{}'.format(i,scan_dict[i])
+            command = 'nmap -sV -Pn -T4 -sC --version-all {} -p{}'.format(i,scan_dict[i])
             log.info('start {}'.format(command))
             child = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
             result = child.stdout.read().decode("utf8", "ignore")
