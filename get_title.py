@@ -57,7 +57,7 @@ file_name = sys.argv[1]
 # file_name = 'baidu_name.txt'
 scan_list = []
 
-with open(file_name ,'r') as f:
+with open(file_name ,'r',errors="ignore") as f:
     for line in f:
         line = line.split('\t')
         domain = line[0]
