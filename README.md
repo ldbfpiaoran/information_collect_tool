@@ -15,3 +15,9 @@ dns_rebin.py
 --------
 dns ssrf script
 usage: python dns_rebin.py 127.0.0.1
+
+
+universal-ssl-check-bypass.js
+--------
+android  ssl bypass
+frida -U -n com.wanmei.xxx -l universal-ssl-check-bypass.js –no-pause
