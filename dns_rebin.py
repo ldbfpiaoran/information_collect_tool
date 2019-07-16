@@ -9,13 +9,16 @@ ssrfip = sys.argv[1]
 class DynamicResolver(object):
     def _doDynamicResponse(self, query):
         name = query.name.name
-        if name not in record or record[name]<1:
+        if name not in record:
             ip = "123.207.248.66"
+            record[name] = 1 
+        elif  record[name]< 1:
+            ip = "123.207.248.66"
+            record[name] = 1 
         else:
             ip = ssrfip
-        if name not in record:
             record[name] = 0
-        record[name] += 1
+
         print(name + " ===> " + ip)
         answer = dns.RRHeader(
             name = name,
